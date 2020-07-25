@@ -1,0 +1,17 @@
+[Unit]
+Description=Birdc Proxy for Looking Glass
+After=network-online.target bird.service
+Wants=network-online.target bird.service
+
+[Service]
+User=bird
+Group=bird
+NoNewPrivileges=true
+AmbientCapabilities=CAP_NET_RAW
+Environment=BIRD_SOCKET=/var/run/bird/bird.ctl
+Environment=BIRDLG_LISTEN=172.20.128.197:8000
+WorkingDirectory=/var/run/bird
+ExecStart=/usr/local/sbin/bird-lg-proxy
+
+[Install]
+WantedBy=multi-user.target

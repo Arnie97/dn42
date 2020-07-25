@@ -1,0 +1,14 @@
+[Unit]
+Description=Update DN42 ROA Tables
+After=network-online.target bird.service
+Wants=network-online.target bird.service
+
+[Service]
+Type=oneshot
+User=bird
+Group=bird
+NoNewPrivileges=true
+WorkingDirectory=/etc/bird
+ExecStart=/usr/bin/wget -qN https://dn42.burble.com/roa/dn42_roa_bird2_4.conf
+ExecStart=/usr/bin/wget -qN https://dn42.burble.com/roa/dn42_roa_bird2_6.conf
+ExecStart=/usr/sbin/birdc configure

@@ -1,0 +1,9 @@
+[Unit]
+Description=Update DN42 ROA Tables
+
+[Timer]
+OnUnitActiveSec=30min
+RandomizedDelaySec=15min
+
+[Install]
+WantedBy=timers.target

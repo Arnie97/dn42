@@ -1,0 +1,17 @@
+# [NetDev]
+# Name = dn42_example
+# Kind = wireguard
+
+# [WireGuard]
+# ListenPort = <last5DigitsOfPeerASNumber>
+# PrivateKey = <myPrivateKey>
+
+# [WireGuardPeer]
+# Endpoint   = <peerPublicIP>:<peerListenPort>
+# PublicKey  = <peerPublicKey>
+# AllowedIPs = 172.20.0.0/14
+# AllowedIPs = 172.31.0.0/16
+# AllowedIPs = 10.100.0.0/14
+# AllowedIPs = 10.127.0.0/16
+# AllowedIPs = fd00::/8
+# AllowedIPs = fe80::/10

@@ -1,0 +1,19 @@
+# [Match]
+# Name = dn42_example
+
+# [Network]
+# IPForward          = true
+# IPv6AcceptRA       = false
+# DHCP               = false
+# KeepConfiguration  = true
+
+# [DHCP]
+# CriticalConnection = true
+
+# [Address]
+# Address = 172.<myTunnelIPv4>/32
+# Peer    = 172.<peerTunnelIPv4>/32
+
+# [Address]
+# Address = fe80::<myLinkLocalIPv6>/128
+# Peer    = fe80::<peerLinkLocalIPv6>/128

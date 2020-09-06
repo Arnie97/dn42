@@ -6,10 +6,11 @@ Wants=network-online.target bird.service
 [Service]
 User=bird
 Group=bird
-NoNewPrivileges=true
 AmbientCapabilities=CAP_NET_RAW
 Environment=BIRD_SOCKET=/var/run/bird/bird.ctl
 Environment=BIRDLG_LISTEN=172.20.128.197:4242
+Environment=BIRDLG_TEMPLATES=peers
+Environment=BIRDLG_PEERING=peers/peering.json
 Environment=GODEBUG=madvdontneed=1
 WorkingDirectory=/etc/bird
 ExecStart=/usr/local/sbin/bird-lg-proxy

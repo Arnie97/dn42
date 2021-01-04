@@ -17,6 +17,10 @@ Environment=BIRDLG_TITLE_BRAND=Moerail
 Environment=GODEBUG=madvdontneed=1
 WorkingDirectory=/tmp
 ExecStart=/usr/local/sbin/bird-lg-frontend
+Restart=on-failure
+RestartSec=30s
+StartLimitBurst=10
+StartLimitIntervalSec=10m
 
 [Install]
 WantedBy=multi-user.target

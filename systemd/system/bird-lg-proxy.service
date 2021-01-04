@@ -14,6 +14,10 @@ Environment=BIRDLG_PEERING=peers/peering.json
 Environment=GODEBUG=madvdontneed=1
 WorkingDirectory=/etc/bird
 ExecStart=/usr/local/sbin/bird-lg-proxy
+Restart=on-failure
+RestartSec=30s
+StartLimitBurst=10
+StartLimitIntervalSec=10m
 
 [Install]
 WantedBy=multi-user.target

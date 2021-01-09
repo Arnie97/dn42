@@ -1,0 +1,15 @@
+[Unit]
+Description=DN42 Peer Finder
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=nobody
+Group=nogroup
+AmbientCapabilities=CAP_NET_RAW
+NoNewPrivileges=true
+Environment=UUID=
+Environment=LOGFILE=peer-finder.log
+WorkingDirectory=/tmp
+ExecStart=/usr/local/bin/peer-finder
